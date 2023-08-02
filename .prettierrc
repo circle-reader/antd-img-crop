@@ -1,0 +1,12 @@
+{
+  "singleQuote": true,
+  "files.insertFinalNewline": true,
+  "overrides": [
+    {
+      "files": ["*.less", "*.css"],
+      "options": {
+        "singleQuote": false
+      }
+    }
+  ]
+}

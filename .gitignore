@@ -1,6 +1,2 @@
-node_modules
 dist
-
-example
-index.html
-vite.config.ts
+node_modules

@@ -8,8 +8,7 @@ import {
 } from 'react';
 import Cropper from 'react-easy-crop';
 import type { Area, Point } from 'react-easy-crop/types';
-import AntButton from 'antd/es/button';
-import AntSlider from 'antd/es/slider';
+import { Button as AntButton, Slider as AntSlider } from 'antd';
 import {
   ASPECT_MAX,
   ASPECT_MIN,

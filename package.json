@@ -11,19 +11,22 @@
     "crop",
     "cropper"
   ],
-  "license": "MIT",
-  "author": "nanxiaobei <nanxiaobei@gmail.com> (https://github.com/nanxiaobei)",
-  "homepage": "https://github.com/nanxiaobei/antd-img-crop",
-  "repository": "github:nanxiaobei/antd-img-crop",
-  "bugs": "https://github.com/nanxiaobei/antd-img-crop/issues",
-  "main": "dist/antd-img-crop.cjs.js",
-  "module": "dist/antd-img-crop.esm.js",
-  "types": "dist/antd-img-crop.d.ts",
-  "files": [
-    "dist"
+  "sideEffects": [
+    "*.css"
   ],
+  "module": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "author": "Ranhe <wenguang.fe@gmail.com> (https://circlereader.com/)",
   "scripts": {
-    "build": "rm -rf dist && rollup -c --configPlugin @rollup/plugin-typescript"
+    "build": "npx tsc",
+    "release": "npm run build && npm publish",
+    "lint": "eslint src/**",
+    "prepare": "husky install"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   },
   "peerDependencies": {
     "antd": ">=4.0.0",
@@ -31,33 +34,26 @@
     "react-dom": ">=16.8.0"
   },
   "dependencies": {
-    "compare-versions": "6.0.0-rc.1",
     "react-easy-crop": "^4.7.4",
     "tslib": "^2.5.0"
   },
   "devDependencies": {
-    "@rollup/plugin-replace": "^5.0.2",
-    "@rollup/plugin-typescript": "^11.1.0",
-    "@trivago/prettier-plugin-sort-imports": "^4.1.1",
-    "@types/node": "^18.15.11",
-    "@types/react": "^18.0.33",
-    "@types/react-dom": "^18.0.11",
-    "@vitejs/plugin-react": "^3.1.0",
-    "antd": "^5.4.0",
-    "autoprefixer": "^10.4.14",
-    "eslint": "^8.37.0",
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@types/classnames": "^2.3.1",
+    "@types/prop-types": "^15.7.5",
+    "@types/react": "^18.2.14",
+    "@types/react-dom": "^18.2.6",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "antd": "^5.8.1",
+    "eslint": "^8.43.0",
     "eslint-config-prettier": "^8.8.0",
-    "eslint-config-react-app": "^7.0.1",
-    "postcss": "^8.4.21",
-    "prettier": "^2.8.7",
-    "prettier-plugin-tailwindcss": "^0.2.7",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "rollup": "3.20.2",
-    "rollup-plugin-dts": "^5.3.0",
-    "rollup-plugin-postcss": "^4.0.2",
-    "tailwindcss": "^3.3.1",
-    "typescript": "^5.0.3",
-    "vite": "^4.2.1"
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "lodash": "^4.17.21",
+    "prettier": "^2.8.8",
+    "typescript": "^5.1.6"
   }
 }

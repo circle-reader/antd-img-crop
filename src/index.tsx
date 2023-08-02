@@ -1,12 +1,9 @@
 import { forwardRef, useCallback, useMemo, useRef, useState } from 'react';
 import type { MouseEvent } from 'react';
 import type CropperRef from 'react-easy-crop';
-import { version } from 'antd';
+import { Modal as AntModal, Upload as AntUpload } from 'antd';
 import type { ModalProps } from 'antd';
-import AntModal from 'antd/es/modal';
-import AntUpload from 'antd/es/upload';
 import type { UploadFile } from 'antd/es/upload/interface';
-import { compareVersions } from 'compare-versions';
 import { PREFIX, ROTATION_INITIAL } from './constants';
 import type {
   BeforeUpload,
@@ -15,11 +12,8 @@ import type {
   ImgCropProps,
 } from './types';
 import EasyCrop from './EasyCrop';
-import './ImgCrop.css';
 
 export type { ImgCropProps } from './types';
-
-const openProp = compareVersions(version, '4.23.0') === -1 ? 'visible' : 'open';
 
 const deprecate = (obj: Record<string, any>, old: string, now: string) => {
   if (old in obj) {
@@ -297,7 +291,7 @@ const ImgCrop = forwardRef<CropperRef, ImgCropProps>((props, cropperRef) => {
         <AntModal
           {...modalProps}
           {...modalBaseProps}
-          {...{ [openProp]: true }}
+          open
           title={title}
           onCancel={onCancel.current}
           onOk={onOk.current}

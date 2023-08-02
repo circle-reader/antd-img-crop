@@ -1,33 +1,23 @@
 {
   "compilerOptions": {
-    "alwaysStrict": true,
-    "noFallthroughCasesInSwitch": true,
-    "noImplicitAny": true,
-    "noImplicitOverride": true,
-    "noImplicitReturns": false,
-    "noImplicitThis": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "strict": true,
-    "strictBindCallApply": true,
-    "strictFunctionTypes": true,
     "strictNullChecks": true,
-    "strictPropertyInitialization": true,
-
-    "module": "esnext",
     "moduleResolution": "node",
-    "resolveJsonModule": true,
-
-    "outDir": "dist",
-
-    "allowSyntheticDefaultImports": true,
+    "lib": ["ESNext", "DOM"],
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "isolatedModules": true,
-
+    "experimentalDecorators": true,
     "jsx": "react-jsx",
-    "lib": ["esnext", "dom"],
-    "target": "es6"
+    "noUnusedParameters": true,
+    "noUnusedLocals": true,
+    "noImplicitAny": true,
+    "declaration": true,
+    "declarationDir": "dist",
+    "target": "ESNext",
+    "skipLibCheck": true,
+    "stripInternal": true,
+    "outDir": "./dist",
+    "rootDirs": ["src"],
+    "baseUrl": "."
   },
+  "include": ["src/**/*"],
   "exclude": ["node_modules", "dist"]
 }
